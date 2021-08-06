@@ -1,0 +1,86 @@
+[
+  {
+    "number": 1,
+    "dh": 1,
+    "name": "Vlak80",
+    "diameter": 80,
+    "radius": 0
+  },
+  {
+    "number": 2,
+    "dh": 2,
+    "name": "Torus32",
+    "diameter": 32,
+    "radius": 6
+  },
+  {
+    "number": 3,
+    "dh": 3,
+    "name": "Torus50",
+    "diameter": 50,
+    "radius": 6
+  },
+  {
+    "number": 4,
+    "dh": 4,
+    "name": "Torus80",
+    "diameter": 80,
+    "radius": 6
+  },
+  {
+    "number": 5,
+    "dh": 5,
+    "name": "Feedmill63",
+    "diameter": 63,
+    "radius": 3.2
+  },
+  {
+    "number": 29,
+    "dh": 103,
+    "name": "Drill65",
+    "diameter": 80,
+    "radius": 0
+  },
+  {
+    "number": 14,
+    "dh": 14,
+    "name": "Plunge25",
+    "diameter": 25,
+    "radius": 0
+  },
+  {
+    "number": 16,
+    "dh": 16,
+    "name": "Plunge20",
+    "diameter": 20,
+    "radius": 0
+  },
+  {
+    "number": 17,
+    "dh": 17,
+    "name": "Plunge12",
+    "diameter": 12,
+    "radius": 0
+  },
+  {
+    "number": 13,
+    "dh": 13,
+    "name": "Plunge63",
+    "diameter": 63,
+    "radius": 0
+  },
+  {
+    "number": 29,
+    "dh": 105,
+    "name": "Drill10",
+    "diameter": 10,
+    "radius": 0
+  },
+  {
+    "number": 20,
+    "dh": 20,
+    "name": "Longflute20",
+    "diameter": 20,
+    "radius": 0
+  }
+]
