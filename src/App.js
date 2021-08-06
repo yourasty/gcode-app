@@ -75,9 +75,9 @@ class App extends React.Component {
       if (name === "pocket_x" || name === "pocket_y") {
         let rotation = 0;
         if (name === "pocket_x")
-          if (value < this.state.inputs.pocket_y) rotation = 90;
+          if (Number(value) < Number(this.state.inputs.pocket_y)) rotation = 90;
         if (name === "pocket_y")
-          if (value > this.state.inputs.pocket_x) rotation = 90;
+          if (Number(value) > Number(this.state.inputs.pocket_x)) rotation = 90;
         return {
           inputs: {
             ...prevState.inputs,
@@ -156,7 +156,7 @@ class App extends React.Component {
         },
       };
     });
-    setTimeout(this.loadLocalState(), 0);
+    //setTimeout(this.loadLocalState(), 0);
   }
 
   handleLocalStorage = this.debounce(
