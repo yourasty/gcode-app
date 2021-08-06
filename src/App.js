@@ -155,7 +155,7 @@ class App extends React.Component {
         pocket_tool: this.fetchTools()
       }};
     });
-    setTimeout(this.loadLocalState(), 0)
+    setTimeout(this.loadLocalState(), 2000)
   }
 
   handleLocalStorage = this.debounce(() => localStorage.setItem("state", JSON.stringify(this.state.inputs)), 1000);
