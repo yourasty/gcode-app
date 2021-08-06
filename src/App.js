@@ -72,6 +72,20 @@ class App extends React.Component {
 
   handleChange(value, name) {
     this.setState((prevState) => {
+      if (name === 'pocket_x' || name === 'pocket_y'){
+        let rotation = 0
+        if (name === 'pocket_x')
+          if (value < this.state.inputs.pocket_y) rotation = 90
+        if (name === 'pocket_y')
+          if (value > this.state.inputs.pocket_x) rotation = 90
+        return {
+          inputs: {
+            ...prevState.inputs,
+            [name]: value,
+            pocket_rotation: rotation
+          }
+        }
+      }
       return { inputs: { ...prevState.inputs, [name]: value } }
     });
   }
@@ -145,7 +159,6 @@ class App extends React.Component {
   }
 
   handleLocalStorage = this.debounce(() => localStorage.setItem("state", JSON.stringify(this.state.inputs)), 1000);
-  // handleRotation = this.debounce(() => this.)
 
   componentDidUpdate() {
     this.handleLocalStorage()

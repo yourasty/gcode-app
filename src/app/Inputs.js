@@ -178,6 +178,7 @@ class Inputs extends React.Component {
               handleChange={this.handleChange}
               value={this.props.inputs}
               comm="0/90deg"
+              disabled='true'
             />
           </div>
         );

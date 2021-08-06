@@ -12,6 +12,7 @@ class Input extends React.Component {
             value={this.props.value[this.props.name]}
             onChange={this.props.handleChange}
             type="number"
+            disabled={this.props.disabled}
           />
         <label className="input_label">
           {this.props.comm}
