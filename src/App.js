@@ -10,7 +10,7 @@ import _ from "lodash";
 class App extends React.Component {
   // main app
   constructor() {
-    super()
+    super();
     this.state = {
       draw: { name: "Contour", id: "1" },
       inputs: {
@@ -39,16 +39,16 @@ class App extends React.Component {
         show_contour: true,
       },
     };
-    this.click = this.click.bind(this)
-    this.handleChange = this.handleChange.bind(this)
-    this.download = this.download.bind(this)
-    this.handleDownload = this.handleDownload.bind(this)
-    this.handleSave = this.handleSave.bind(this)
-    this.handleDefTool = this.handleDefTool.bind(this)
-    this.fetchTools = this.fetchTools.bind(this)
-    this.loadLocalState = this.loadLocalState.bind(this)
-    this.debounce = this.debounce.bind(this)
-    this.handleLocalStorage = this.handleLocalStorage.bind(this)
+    this.click = this.click.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.download = this.download.bind(this);
+    this.handleDownload = this.handleDownload.bind(this);
+    this.handleSave = this.handleSave.bind(this);
+    this.handleDefTool = this.handleDefTool.bind(this);
+    this.fetchTools = this.fetchTools.bind(this);
+    this.loadLocalState = this.loadLocalState.bind(this);
+    this.debounce = this.debounce.bind(this);
+    this.handleLocalStorage = this.handleLocalStorage.bind(this);
   }
 
   debounce = (fn, ms) => {
@@ -66,55 +66,55 @@ class App extends React.Component {
     this.setState({ draw: { name: name, id: id } });
     if (!this.state.inputs.show_contour)
       this.setState((prevState) => {
-        return { inputs: { ...prevState.inputs, show_contour: true } }
+        return { inputs: { ...prevState.inputs, show_contour: true } };
       });
   }
 
   handleChange(value, name) {
     this.setState((prevState) => {
-      if (name === 'pocket_x' || name === 'pocket_y'){
-        let rotation = 0
-        if (name === 'pocket_x')
-          if (value < this.state.inputs.pocket_y) rotation = 90
-        if (name === 'pocket_y')
-          if (value > this.state.inputs.pocket_x) rotation = 90
+      if (name === "pocket_x" || name === "pocket_y") {
+        let rotation = 0;
+        if (name === "pocket_x")
+          if (value < this.state.inputs.pocket_y) rotation = 90;
+        if (name === "pocket_y")
+          if (value > this.state.inputs.pocket_x) rotation = 90;
         return {
           inputs: {
             ...prevState.inputs,
             [name]: value,
-            pocket_rotation: rotation
-          }
-        }
+            pocket_rotation: rotation,
+          },
+        };
       }
-      return { inputs: { ...prevState.inputs, [name]: value } }
+      return { inputs: { ...prevState.inputs, [name]: value } };
     });
   }
 
   download(data, filename) {
-    let file = new Blob([data], { type: "text/plain" })
+    let file = new Blob([data], { type: "text/plain" });
     if (window.navigator.msSaveOrOpenBlob)
       window.navigator.msSaveOrOpenBlob(file, filename + ".NC");
     else {
       let a = document.createElement("a"),
-        url = URL.createObjectURL(file)
-      a.href = url
-      a.download = filename + ".NC"
-      document.body.appendChild(a)
-      a.click()
+        url = URL.createObjectURL(file);
+      a.href = url;
+      a.download = filename + ".NC";
+      document.body.appendChild(a);
+      a.click();
       setTimeout(function () {
-        document.body.removeChild(a)
-        window.URL.revokeObjectURL(url)
-      }, 0)
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      }, 0);
     }
   }
 
   handleDownload(event) {
-    this.download(event.target.value, this.state.draw.name)
+    this.download(event.target.value, this.state.draw.name);
   }
 
   handleSave(main, main_name, sub, sub_name) {
-    if (sub) this.download(sub, sub_name)
-    if (main) this.download(main, main_name)
+    if (sub) this.download(sub, sub_name);
+    if (main) this.download(main, main_name);
   }
 
   handleDefTool(event) {
@@ -124,7 +124,7 @@ class App extends React.Component {
           ...prevState.inputs,
           pocket_tool: {
             ...prevState.inputs.pocket_tool,
-            [event.target.name]: event.target.value
+            [event.target.name]: event.target.value,
           },
         },
       };
@@ -138,32 +138,35 @@ class App extends React.Component {
         name: this.state.inputs.tool_def[key],
       });
     });
-    return tools
+    return tools;
   }
 
   loadLocalState() {
     if (localStorage.getItem("state") !== "") {
-      this.setState({ inputs: JSON.parse(localStorage.getItem("state")) })
+      this.setState({ inputs: JSON.parse(localStorage.getItem("state")) });
     }
   }
 
   componentDidMount() {
-
     this.setState((prevState) => {
-      return { inputs: {
-        ...prevState.inputs,
-        pocket_tool: this.fetchTools()
-      }};
+      return {
+        inputs: {
+          ...prevState.inputs,
+          pocket_tool: this.fetchTools(),
+        },
+      };
     });
-    setTimeout(this.loadLocalState(), 0)
+    setTimeout(this.loadLocalState(), 0);
   }
 
-  handleLocalStorage = this.debounce(() => localStorage.setItem("state", JSON.stringify(this.state.inputs)), 1000);
+  handleLocalStorage = this.debounce(
+    () => localStorage.setItem("state", JSON.stringify(this.state.inputs)),
+    1000
+  );
 
   componentDidUpdate() {
-    this.handleLocalStorage()
+    this.handleLocalStorage();
   }
-
 
   render() {
     return (
@@ -183,7 +186,7 @@ class App extends React.Component {
           handleDefTool={this.handleDefTool}
         />
       </div>
-    )
+    );
   }
 }
 
