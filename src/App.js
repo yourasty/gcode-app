@@ -142,7 +142,7 @@ class App extends React.Component {
   }
 
   loadLocalState() {
-    if (localStorage.getItem("state") !== "") {
+    if (localStorage.getItem("state") !== null) {
       this.setState({ inputs: JSON.parse(localStorage.getItem("state")) });
     }
   }
@@ -156,7 +156,7 @@ class App extends React.Component {
         },
       };
     });
-    //setTimeout(this.loadLocalState(), 0);
+    this.loadLocalState()
   }
 
   handleLocalStorage = this.debounce(
