@@ -24,7 +24,7 @@ class RRect extends React.Component {
       return this;
     };
     ctx.chRect = function (x, y, w, h, r) {
-      r = -r;
+      r = Math.abs(r);
       this.moveTo(x + r, y);
       this.lineTo(x + w - r, y);
       this.lineTo(x + w, y + r);
