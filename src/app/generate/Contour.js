@@ -26,7 +26,7 @@ M6T${this.props.inputs.tools[this.props.inputs.tool].number}
 S950M03F4000
 #110=${this.props.inputs.tools[this.props.inputs.tool].dh}(D/H NUMBER)
 
-G1902B#110D#102H100I[#101/2]J[#102/2]K0
+G1902B#101D#102H100I[#101/2]J[#102/2]K0
 G54(ZERO POINT)
 
 #121=[#101/2]
@@ -110,7 +110,7 @@ G0Z50.
 #117=${Math.abs(this.props.inputs.flench_radius)}(RADIUS/CHAMFER IN MM)
 #119=${this.props.inputs.depth}(STARTING-DEPTH)
 
-G1902B#110.D#102.H100.I[#101/2].J[#102/2].K0.
+G1902B#101D#102H100I[#101/2]J[#102/2]K0
 
 #121=[#101/2]
 #122=[#102/2]
