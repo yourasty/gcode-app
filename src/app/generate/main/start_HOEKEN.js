@@ -23,7 +23,7 @@ function start_hoeken(inputs, tool) {
 
     M10
 
-    G1902B110D215H30.I55J107.5K0.
+    G1902B#601D#602H100I[#601/2]J[#602/2]K0
     (SEPT 2019)
     G54(NULPUNT MIDDEN PLAAT)
 
