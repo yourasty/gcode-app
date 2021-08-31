@@ -2,10 +2,7 @@ import React from "react";
 
 class Contour extends React.Component {
 
-  UNSAFE_componentWillMount() {
-
-  }
-
+  
   render(props) {
     let corner = 1, corner2 = 1;
     if (this.props.inputs.radius > 0) corner = 2;
