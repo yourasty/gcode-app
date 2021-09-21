@@ -9,7 +9,7 @@ function start_hoeken(inputs, tool) {
     #606=${inputs.pockets_in_y}(NUMBER OF POCKETS IN Y-AS)
     #115=${inputs.pocket_depth}(DEPTH)
     #168=${inputs.pocket_rotation}(ROTATION 0 OF 90)
-    #120=${inputs.tools[inputs.tool].diameter}(BOORDIAMETER)
+    #120=${inputs.tools[inputs.pocket_tool[tool]].diameter}(BOORDIAMETER)
 
     (NULPUNT BEREKENING)
     #620=[[#605/2]-0.5]*[#601+#24]
