@@ -24,7 +24,7 @@ class RRect extends React.Component {
       return this;
     };
     ctx.chRect = function (x, y, w, h, r) {
-      r = -r;
+      r = Math.abs(r);
       this.moveTo(x + r, y);
       this.lineTo(x + w - r, y);
       this.lineTo(x + w, y + r);
@@ -81,23 +81,23 @@ class RRect extends React.Component {
       for (let i = 0; i < Math.trunc(rows / 2); i++) {
         for (let j = 0; j < Math.trunc(columns); j++) {
           ctx[corner](
-            (-mx + (x + wx) * j) + canvas.width/2 + wx/2,
-            -(-my + (y + wy) * i) + canvas.height/2 - y -(wy/2),
+            -mx + (x + wx) * j + canvas.width / 2 + wx / 2,
+            -(-my + (y + wy) * i) + canvas.height / 2 - y - wy / 2,
             x,
             y,
             r
           );
           ctx[corner](
-            (-mx + (x + wx) * j) + canvas.width / 2 + wx/2,
-            (-my + (y + wy) * i) + canvas.height / 2 +(wy/2),
+            -mx + (x + wx) * j + canvas.width / 2 + wx / 2,
+            -my + (y + wy) * i + canvas.height / 2 + wy / 2,
             x,
             y,
             r
           );
           if (rows % 2 !== 0 && i === Math.trunc(rows / 2) - 1) {
             ctx[corner](
-              -(-mx + (x + wx) * j) + canvas.width / 2 - x - wx/2,
-              canvas.height / 2 - y/2,
+              -(-mx + (x + wx) * j) + canvas.width / 2 - x - wx / 2,
+              canvas.height / 2 - y / 2,
               x,
               y,
               r

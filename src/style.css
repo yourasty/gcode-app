@@ -26,7 +26,7 @@
   margin: 0 auto;
   padding: 5px 1px;
 
-  background-color: #BDD4E7;
+  background-color: #bdd4e7;
   border-radius: 5px;
 }
 
@@ -43,7 +43,7 @@
   display: flex stretch;
   flex-flow: row;
   height: 350px;
-  background-color: #AAB9CF;
+  background-color: #aab9cf;
   border-radius: 5px;
   margin: 0px 2px;
 }
@@ -54,7 +54,7 @@
   padding: 0;
 }
 h1 {
-  background-color: #8693AB;
+  background-color: #8693ab;
   display: flex stretch;
   text-align: center;
   margin: 0;
@@ -113,7 +113,7 @@ button {
   margin-top: 8px;
 }
 
-.selectTool{
+.selectTool {
   margin-left: 20px;
   margin-top: 10px;
 }
@@ -130,22 +130,27 @@ button {
   padding: 5px;
   margin: 1px 1px;
   border-radius: 5px;
-  background-color: #AAB9CF;
+  background-color: #aab9cf;
+}
+pre {
+  padding: 20px;
 }
 @media screen and (max-width: 820px) {
   .pockets {
     flex-wrap: wrap;
   }
-  canvas {
-    top: 5px;
-  }
-  .input_div .input_check{
+
+  .input_div .input_check {
     margin: 5px;
   }
+
   button {
     margin: 3px 5px;
   }
 
+  pre {
+    padding: 5px;
+  }
 }
 .save label,
 p {
