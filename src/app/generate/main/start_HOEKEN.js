@@ -9,7 +9,7 @@ function start_hoeken(inputs, tool) {
     #606=${inputs.pockets_in_y}(NUMBER OF POCKETS IN Y-AS)
     #115=${inputs.pocket_depth}(DEPTH)
     #168=${inputs.pocket_rotation}(ROTATION 0 OF 90)
-    #120=${inputs.tools[inputs.tool].diameter}(BOORDIAMETER)
+    #120=${inputs.tools[inputs.pocket_tool[tool]].diameter}(BOORDIAMETER)
 
     (NULPUNT BEREKENING)
     #620=[[#605/2]-0.5]*[#601+#24]
@@ -23,7 +23,7 @@ function start_hoeken(inputs, tool) {
 
     M10
 
-    G1902B110D215H30.I55J107.5K0.
+    G1902B#601D#602H100I[#601/2]J[#602/2]K0
     (SEPT 2019)
     G54(NULPUNT MIDDEN PLAAT)
 

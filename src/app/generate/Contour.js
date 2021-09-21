@@ -25,7 +25,7 @@ M6T${this.props.inputs.tools[this.props.inputs.tool].number}
 S950M03F4000
 #110=${this.props.inputs.tools[this.props.inputs.tool].dh}(D/H NUMBER)
 
-G1902B#110.D#102.H100.I[#101/2].J[#102/2].K0.
+G1902B#101D#102H100I[#101/2]J[#102/2]K0
 G54(ZERO POINT)
 
 #121=[#101/2]
@@ -113,7 +113,7 @@ G0Z50.
 #117=${Math.abs(this.props.inputs.flench_radius)}(RADIUS/CHAMFER IN MM)
 #119=${this.props.inputs.depth}(STARTING-DEPTH)
 
-G1902B#110.D#102.H100.I[#101/2].J[#102/2].K0.
+G1902B#101D#102H100I[#101/2]J[#102/2]K0
 
 #121=[#101/2]
 #122=[#102/2]
@@ -133,7 +133,7 @@ G1902B#110.D#102.H100.I[#101/2].J[#102/2].K0.
         ? `
 N1(SHARP)
 G0G90G43X-[#125+40]Y#126Z5.H#110
-N10
+N11
 G1Z-#128
 G1G41Y#122D#110
 G1X#121
@@ -143,14 +143,14 @@ G1Y#122
 G1X-[#125-40]
 G1G40Y#126
 #128=#128+#114
-IF[#128LE#123]GOTO10
+IF[#128LE#123]GOTO11
 G0Z50.
 `
         : this.corner2 === 2 && this.props.inputs.flench
         ? `
 N2(RADIUS)
 G0G90G43X-[#125+40]Y#126Z5.H#110
-N20
+N21
 G1Z-#128
 G1G41Y#122D#110
 G1X#131
@@ -164,14 +164,14 @@ G2X-#131Y#122R#117
 G1X-[#131-40]
 G1G40Y#126
 #128=#128+#114
-IF[#128LE#123]GOTO20
+IF[#128LE#123]GOTO21
 G0Z50.
 `
         : this.corner2 === 3 && this.props.inputs.flench
         ? `
 N3(CHAMFER)
 G0G90G43X-#125Y#126Z5.H#110
-N30
+N31
 G1Z-#128
 G1G41Y#122D#110
 G1X#131
@@ -185,7 +185,7 @@ G1X-#131Y#122
 G1X-#125
 G1G40Y#126
 #128=#128+#114
-IF[#128LE#123]GOTO30
+IF[#128LE#123]GOTO31
 G0Z50.
 `
         : "";

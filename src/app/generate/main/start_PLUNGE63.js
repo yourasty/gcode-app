@@ -25,7 +25,7 @@ function start_plunge63(inputs, tool) {
     M16
     #110=${inputs.tools[inputs.pocket_tool[tool]].dh}(H/D NUMMER)
 
-    G1902B#601D#602H100.I[#601/2]J[#602/2]K0.
+    G1902B#601D#602H100I[#601/2]J[#602/2]K0
     (SEPT2019)
     G54(NULPUNT MIDDEN PLAAT)
 

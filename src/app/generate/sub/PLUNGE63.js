@@ -1,5 +1,4 @@
-export const plunge63 = `
-%
+export const plunge63 = `%
 <PLUNGE63>
 IF[#168NE90]GOTO7
 #131=#601
