@@ -21,7 +21,7 @@ function start_plunge12(inputs, tool) {
     S3070M3F900
     #110=${inputs.tools[inputs.pocket_tool[tool]].dh}(D/H NUMMER)
 
-    G1902B110D220H100I55J110K0.
+    G1902B#601D#602H100I[#601/2]J[#602/2]K0
     (SEPT 2019)
     G54(NULPUNT MIDDEN PLAAT)
 
