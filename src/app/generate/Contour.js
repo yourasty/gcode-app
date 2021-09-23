@@ -2,7 +2,7 @@ import React from "react";
 
 class Contour extends React.Component {
 
-  
+
   render(props) {
     let corner = 1, corner2 = 1;
     if (this.props.inputs.radius > 0) corner = 2;
@@ -52,7 +52,7 @@ G1X-[#125-40]
 G1G40Y#126
 #128=#128+#114
 IF[#128LE#123]GOTO10
-IF[[[#115-#119]/#114]EQ0]GOTO111
+IF[#115EQ#128-#114]GOTO111
 #128=#115
 GOTO10
 N111
@@ -76,7 +76,7 @@ G1X-[#131-40]
 G1G40Y#126
 #128=#128+#114
 IF[#128LE#123]GOTO20
-IF[[[#115-#119]/#114]EQ0]GOTO111
+IF[#115EQ#128-#114]GOTO111
 #128=#115
 GOTO20
 N111
@@ -99,7 +99,7 @@ G1X-#125
 G1G40Y#126
 #128=#128+#114
 IF[#128LE#123]GOTO30
-IF[[[#115-#119]/#114]EQ0]GOTO111
+IF[#115EQ#128-#114]GOTO111
 #128=#115
 GOTO30
 N111
@@ -150,10 +150,10 @@ G1X-[#125-40]
 G1G40Y#126
 #128=#128+#114
 IF[#128LE#123]GOTO11
-IF[[[#115-#119]/#114]EQ0]GOTO111
+IF[#115EQ#128-#114]GOTO113
 #128=#115
 GOTO11
-N111
+N113
 G0Z50.
 `
         : corner2 === 2 && this.props.inputs.flench
@@ -175,10 +175,10 @@ G1X-[#131-40]
 G1G40Y#126
 #128=#128+#114
 IF[#128LE#123]GOTO21
-IF[[[#115-#119]/#114]EQ0]GOTO111
+IF[#115EQ#128-#114]GOTO113
 #128=#115
 GOTO21
-N111
+N113
 G0Z50.
 `
         : corner2 === 3 && this.props.inputs.flench
@@ -200,10 +200,10 @@ G1X-#125
 G1G40Y#126
 #128=#128+#114
 IF[#128LE#123]GOTO31
-IF[[[#115-#119]/#114]EQ0]GOTO111
+IF[#115EQ#128-#114]GOTO113
 #128=#115
 GOTO31
-N111
+N113
 G0Z50.
 `
         : "";
