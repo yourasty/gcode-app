@@ -183,7 +183,64 @@ class Inputs extends React.Component {
           </div>
         );
       case "3":
-        return <div className="inputs"></div>;
+        return <div className="inputs">
+          <Check
+            name="splinter"
+            handleCheck={this.handleCheck}
+            value={this.props.inputs}
+            comm="Splinters/Custom"
+          />
+          <Input
+            label="Corner distance"
+            name="freespace_x"
+            handleChange={this.handleChange}
+            value={this.props.inputs}
+            comm="mm"
+          />
+          <Input
+            label="Distance between"
+            name="freespace_between"
+            handleChange={this.handleChange}
+            value={this.props.inputs}
+            comm="mm"
+          />
+          <Input
+            label="Depth in wall"
+            name="freespace_inwall"
+            handleChange={this.handleChange}
+            value={this.props.inputs}
+            comm="mm"
+          />
+          <Input
+            label="Flat surface"
+            name="freespace_flat"
+            handleChange={this.handleChange}
+            value={this.props.inputs}
+            comm="mm"
+          />
+          <Input
+            label="N of plunge passes"
+            name="freespace_plunge_n"
+            handleChange={this.handleChange}
+            value={this.props.inputs}
+            comm="mm"
+          />
+          <Input
+            label="Radius"
+            name="freespace_radius"
+            handleChange={this.handleChange}
+            value={this.props.inputs}
+            comm="mm"
+            disabled={true}
+          />
+          <Input
+            label="Depth without R"
+            name="freespace_depth"
+            handleChange={this.handleChange}
+            value={this.props.inputs}
+            comm="mm"
+          />
+        </div>;
       default:
         return <div className="inputs"></div>;
     }

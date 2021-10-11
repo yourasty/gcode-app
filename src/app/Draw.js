@@ -7,11 +7,7 @@ class Draw extends React.Component {
       <div className="draw">
         <h1>{this.props.what.name}</h1>
         <div className="draw-sub">
-          {this.props.what.id === "1" || this.props.what.id === "2" ? (
             <Rect inputs={this.props.inputs} what={this.props.what.id} />
-          ) : (
-            ""
-          )}
         </div>
       </div>
     );

@@ -9,6 +9,7 @@ class Menu extends React.Component {
       <div className="menu">
         <Item name="Contour" id="1" click={this.props.click} />
         <Item name="Pockets" id="2" click={this.props.click} />
+        <Item name="Splinter/Freespace" id="3" click={this.props.click} />
       </div>
     );
   }

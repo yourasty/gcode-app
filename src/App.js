@@ -20,6 +20,7 @@ class App extends React.Component {
         depth: 23,
         flench: false,
         tool: 3,
+        tool_update: 1,
         tools: data,
         tool_def: tool_def,
         flench_x: 1510,
@@ -37,6 +38,14 @@ class App extends React.Component {
         pocket_rotation: 0,
         pocket_tool: {},
         show_contour: true,
+        splinter: false,
+        freespace_x: 25,
+        freespace_between: 105,
+        freespace_inwall: 1.5,
+        freespace_flat: 1,
+        freespace_plunge_n: 1,
+        freespace_radius: 12.5,
+        freespace_depth: 69.2
       },
     };
     this.click = this.click.bind(this);
@@ -86,6 +95,25 @@ class App extends React.Component {
           },
         };
       }
+      // else if (name === "freespace_radius" && (Number(value) === 10 || Number(value) === 12.5)) {
+      //   let freespaceTool = "Plunge25";
+      //   if (Number(value) === 10) freespaceTool = "Plunge20";
+      //   let freespaceToolNumber = _.findIndex(this.state.inputs.tools, {
+      //     name: freespaceTool,
+      //   });
+      //   return {
+      //     inputs: {
+      //       ...prevState.inputs,
+      //       [name]: value,
+      //       tool_update: prevState.inputs.tool_update*2,
+      //       pocket_tool: {
+      //         ...prevState.inputs.pocket_tool,
+      //         FREESPACE: freespaceToolNumber,
+      //       },
+      //     },
+      //   };
+      // }
+      else
       return { inputs: { ...prevState.inputs, [name]: value } };
     });
   }
@@ -118,6 +146,22 @@ class App extends React.Component {
   }
 
   handleDefTool(event) {
+    if (event.target.name === "FREESPACE"){
+      let radius = this.state.inputs.tools[event.target.value].diameter / 2
+      this.setState((prevState) => {
+        return {
+          inputs: {
+            ...prevState.inputs,
+            freespace_radius: radius,
+            pocket_tool: {
+              ...prevState.inputs.pocket_tool,
+              [event.target.name]: event.target.value,
+            },
+          },
+        };
+      });
+    }
+    else
     this.setState((prevState) => {
       return {
         inputs: {

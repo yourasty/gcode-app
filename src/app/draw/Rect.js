@@ -40,11 +40,11 @@ class RRect extends React.Component {
     canvas.width = rect.width;
     canvas.height = 280;
 
-    if (this.props.inputs.show_contour) {
-      let what = "rect";
-      if (this.props.inputs.radius > 0) what = "roundRect";
-      else if (this.props.inputs.radius < 0) what = "chRect";
-      ctx[what](
+    if (this.props.inputs.show_contour && this.props.what !== "3") {
+      let corner = "rect";
+      if (this.props.inputs.radius > 0) corner = "roundRect";
+      else if (this.props.inputs.radius < 0) corner = "chRect";
+      ctx[corner](
         canvas.width / 2 - this.props.inputs.size_x / 2 / 5,
         canvas.height / 2 - this.props.inputs.size_y / 2 / 5,
         this.props.inputs.size_x / 5,
@@ -105,6 +105,22 @@ class RRect extends React.Component {
           }
         }
       }
+    }
+
+    if (this.props.what === "3") {
+      let corner = "rect";
+      let x = Number(this.props.inputs.pocket_x),
+        y = this.props.inputs.pocket_y,
+        r = this.props.inputs.corner_radius;
+      if (r > 0) corner = "roundRect";
+      else if (r < 0) corner = "chRect";
+      ctx[corner](
+        canvas.width / 2 - x / 2,
+        canvas.height / 2 - y / 2,
+        x,
+        y,
+        r
+      );
     }
 
     ctx.stroke();

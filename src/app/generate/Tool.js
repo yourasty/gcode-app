@@ -13,6 +13,7 @@ class Tool extends React.Component {
       <div className="selectTool">
         <label htmlFor={this.props.name}>Tool:</label>
         <select
+          selected={this.props.inputs.tool_update}
           name={this.props.name}
           defaultValue={this.props.inputs.pocket_tool[this.props.name]}
           onChange={this.props.handleDefTool}
