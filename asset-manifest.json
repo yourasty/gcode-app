@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/gcode-app/static/css/main.13fc1a86.chunk.css",
+    "main.js": "/gcode-app/static/js/main.be39c8ab.chunk.js",
+    "main.js.map": "/gcode-app/static/js/main.be39c8ab.chunk.js.map",
+    "runtime-main.js": "/gcode-app/static/js/runtime-main.8b0c4798.js",
+    "runtime-main.js.map": "/gcode-app/static/js/runtime-main.8b0c4798.js.map",
+    "static/js/2.68f7b0a6.chunk.js": "/gcode-app/static/js/2.68f7b0a6.chunk.js",
+    "static/js/2.68f7b0a6.chunk.js.map": "/gcode-app/static/js/2.68f7b0a6.chunk.js.map",
+    "index.html": "/gcode-app/index.html",
+    "static/css/main.13fc1a86.chunk.css.map": "/gcode-app/static/css/main.13fc1a86.chunk.css.map",
+    "static/js/2.68f7b0a6.chunk.js.LICENSE.txt": "/gcode-app/static/js/2.68f7b0a6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8b0c4798.js",
+    "static/js/2.68f7b0a6.chunk.js",
+    "static/css/main.13fc1a86.chunk.css",
+    "static/js/main.be39c8ab.chunk.js"
+  ]
+}
